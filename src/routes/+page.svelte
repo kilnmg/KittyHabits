@@ -5,7 +5,7 @@
 	import { formatRelativeDate, calculateStreak } from '$lib/utils/date';
 	import { browser } from '$app/environment';
 	import { writable } from 'svelte/store';
-	import { Plus, Copy, Check, X, Flame } from 'lucide-svelte';
+	import { Plus, ClipboardPlusIcon, ClipboardCheckIcon, X, Flame } from 'lucide-svelte';
 
 	let showCreateForm = false;
 	let showSaveSuccess = false;
@@ -147,9 +147,9 @@
 			{#if $habits.length > 0}
 				<button class="copy-button" on:click={handleSaveHabits} title="Copy habits to clipboard">
 					{#if showSaveSuccess}
-						<Check size={20} />
+						<ClipboardCheckIcon size={20} />
 					{:else}
-						<Copy size={20} />
+						<ClipboardPlusIcon size={20} />
 					{/if}
 				</button>
 			{/if}
@@ -289,9 +289,7 @@
 	}
 
 	.container {
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 2rem;
+		width: auto;
 	}
 
 	.header {	

@@ -9,7 +9,7 @@
 	import { browser } from '$app/environment';
 	import { onDestroy } from 'svelte';
 	import { goto } from '$app/navigation';
-	import { Pencil, Trash2, List, Calendar, BarChart2, X, Flame } from 'lucide-svelte';
+	import { Pencil, Trash2, List, Calendar, BarChart2, X, Flame, BanknoteArrowDown } from 'lucide-svelte';
 
 	type ViewMode = 'calendar' | 'list' | 'chart';
 
@@ -328,8 +328,8 @@
 	<nav class="breadcrumb">
 		<a href="/">← Back to Habits</a>
 		<div class="header-buttons">
-			<button class="chip-out-button" on:click={() => (showChipOutModal = true)}>
-				$ Chip Out
+			<button class="icon-button" on:click={() => (showChipOutModal = true)}>
+				<BanknoteArrowDown size={20} />
 			</button>
 			<button class="icon-button" on:click={() => (showEditForm = !showEditForm)} title="Edit">
 				<Pencil size={20} />
