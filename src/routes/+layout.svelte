@@ -3,30 +3,14 @@
 	import '../app.css';
 
 	let { children } = $props();
-
-	// Function to register the service worker
-	const registerServiceWorker = () => {
-		if ('serviceWorker' in navigator) {
-			window.addEventListener('load', () => {
-				navigator.serviceWorker.register('/sw.js')
-					.then(registration => {
-						console.log('ServiceWorker registration successful:', registration);
-					})
-					.catch(err => {
-						console.log('ServiceWorker registration failed:', err);
-					});
-			});
-		}
-	};
-
-	// Call the function to register the service worker
-	registerServiceWorker();
 </script>
 
 <div class="app">
+
 	<main>
 		{@render children()}
 	</main>
+
 </div>
 
 <style>
